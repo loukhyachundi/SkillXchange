@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 36% 96%;
+    --foreground: 186 28% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 186 28% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 186 28% 13%;
+
+    --primary: 176 50% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 178 48% 32%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 180 24% 95%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 176 50% 47%;
+    --accent-foreground: 186 28% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 180 16% 85%;
+    --input: 180 16% 85%;
+    --ring: 176 50% 47%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 180 36% 98%;
+    --sidebar-foreground: 186 28% 13%;
+    --sidebar-primary: 176 50% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 178 48% 32%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 180 16% 90%;
+    --sidebar-ring: 176 50% 47%;
+  }
+
+  * {
+    @apply border-border selection:bg-skillx-teal selection:text-white;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-skillx-light text-skillx-dark font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  
+  .glass-dark {
+    @apply bg-skillx-dark/80 backdrop-blur-md border border-white/10 shadow-lg text-white;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/50 shadow-md;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-skillx-green to-skillx-teal bg-clip-text text-transparent;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-skillx-teal/50 rounded-full;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(to right, theme('colors.skillx.green'), theme('colors.skillx.teal')) 1;
+  }
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
